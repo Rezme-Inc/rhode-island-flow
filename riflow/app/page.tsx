@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
@@ -79,7 +80,20 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Rhode Island General Laws §28-5-7, Rhode Island's "Ban-the-Box" Law, Rhode Island General Laws § 28-5.1-14, and the U.S. Equal Employment Opportunity Commission.
+                <Link 
+                  href="/statutes"
+                  className="text-primary hover:underline"
+                >
+                  Rhode Island General Laws §28-5-7
+                </Link>
+                , Rhode Island's "Ban-the-Box" Law,{' '}
+                <Link 
+                  href="/statutes/5-1-14"
+                  className="text-primary hover:underline"
+                >
+                  Rhode Island General Laws § 28-5.1-14
+                </Link>
+                , and the U.S. Equal Employment Opportunity Commission.
               </p>
             </CardContent>
           </Card>
